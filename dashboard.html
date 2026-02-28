@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedtile - Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .dashboard {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+            margin: 40px 0;
+            font-size: 3rem;
+        }
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .card h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        .logout-btn {
+            background: white;
+            color: #667eea;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <h1>Welcome to Wedtile</h1>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+        <div class="content-grid">
+            <div class="card">
+                <h2>Web Development</h2>
+                <p>Learn HTML, CSS, JavaScript and modern frameworks</p>
+            </div>
+            <div class="card">
+                <h2>Data Science</h2>
+                <p>Master Python, ML and Data Analytics</p>
+            </div>
+            <div class="card">
+                <h2>Design</h2>
+                <p>UI/UX and Graphic Design courses</p>
+            </div>
+        </div>
+    </div>
+    <script type="module">
+        import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        
+        const firebaseConfig = {
+            apiKey: "AIzaSyAUpGrWtSa70ITHLyZyCWoGhhlfpBMCGFc",
+            authDomain: "chegram-9e96c.firebaseapp.com",
+            databaseURL: "https://chegram-9e96c-default-rtdb.firebaseio.com",
+            projectId: "chegram-9e96c",
+            storageBucket: "chegram-9e96c.firebasestorage.app",
+            messagingSenderId: "663001258398",
+            appId: "1:663001258398:web:67ce064f5fb8563926de8f",
+            measurementId: "G-1RJ7WN11YM"
+        };
+        
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        
+        window.logout = async function() {
+            await signOut(auth);
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

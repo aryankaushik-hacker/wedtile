@@ -1,0 +1,14 @@
+{
+  "name": "wedtile",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "firebase": "^10.7.1",
+    "firebase-admin": "^12.0.0",
+    "cors": "^2.8.5"
+  }
+}

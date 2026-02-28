@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-box {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px 20px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.button-box {
+    width: 100%;
+    margin: 0 auto 40px;
+    position: relative;
+    border-radius: 30px;
+    background: #f0f0f0;
+    padding: 5px;
+    display: flex;
+}
+
+.toggle-btn {
+    width: 50%;
+    padding: 12px 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+    font-size: 16px;
+    font-weight: 600;
+    color: #666;
+    transition: 0.3s;
+    z-index: 2;
+}
+
+#btn {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 30px;
+    transition: 0.3s;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.form-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 320px;
+}
+
+.input-group {
+    position: absolute;
+    width: 100%;
+    transition: 0.5s;
+    top: 0;
+}
+
+.input-field {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    outline: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.input-field:focus {
+    border-color: #667eea;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: 0;
+    outline: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+}
+
+#login {
+    left: 0;
+}
+
+#register {
+    left: 100%;
+}
+
+.forgot-link {
+    text-align: center;
+    margin-top: 15px;
+    color: #667eea;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    .form-box {
+        padding: 25px 15px;
+    }
+    
+    .input-field {
+        padding: 12px;
+        font-size: 14px;
+    }
+    
+    .toggle-btn {
+        font-size: 14px;
+        padding: 10px 0;
+    }
+}
