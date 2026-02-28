@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedtile - Earn by Naam Jaap</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Wedtile</div>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search mantras...">
+    </div>
+    <div class="nav-right">
+      <div class="coin-balance"><i class="fas fa-coins"></i> <span id="coinBalance">0</span></div>
+      <div class="profile-icon" onclick="location.href='profile.html'"></div>
+    </div>
+  </nav>
+
+  <div class="jaap-container">
+    <div class="mantra-card">
+      <h2 id="mantraText">ॐ नमः शिवाय</h2>
+      <p class="mantra-meaning">Om Namah Shivaya</p>
+      
+      <div class="counter-display">
+        <div class="count-circle">
+          <span id="jaapCount">0</span>
+          <p>Jaaps</p>
+        </div>
+      </div>
+
+      <div class="target-info">
+        <span>Target: <strong id="targetCount">108</strong></span>
+        <span>Reward: <strong>1 coin</strong> per 108 jaaps</span>
+      </div>
+
+      <button class="jaap-btn" id="jaapBtn">
+        <i class="fas fa-hand-pointer"></i> Tap to Jaap
+      </button>
+
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+
+      <div class="quick-targets">
+        <button class="target-btn" onclick="setTarget(108)">108</button>
+        <button class="target-btn" onclick="setTarget(1008)">1008</button>
+        <button class="target-btn" onclick="setTarget(10008)">10008</button>
+      </div>
+
+      <button class="reset-btn" onclick="resetCounter()">
+        <i class="fas fa-redo"></i> Reset
+      </button>
+    </div>
+
+    <div class="mantra-selector">
+      <h3>Select Mantra</h3>
+      <div class="mantra-list">
+        <div class="mantra-item active" onclick="selectMantra('ॐ नमः शिवाय', 'Om Namah Shivaya')">
+          <i class="fas fa-om"></i> Om Namah Shivaya
+        </div>
+        <div class="mantra-item" onclick="selectMantra('हरे कृष्ण', 'Hare Krishna')">
+          <i class="fas fa-om"></i> Hare Krishna
+        </div>
+        <div class="mantra-item" onclick="selectMantra('ॐ नमो भगवते वासुदेवाय', 'Om Namo Bhagavate Vasudevaya')">
+          <i class="fas fa-om"></i> Om Namo Bhagavate
+        </div>
+        <div class="mantra-item" onclick="selectMantra('गायत्री मंत्र', 'Gayatri Mantra')">
+          <i class="fas fa-om"></i> Gayatri Mantra
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="bottom-nav">
+    <a href="index.html" class="nav-item active"><i class="fas fa-home"></i></a>
+    <a href="donate.html" class="nav-item"><i class="fas fa-om"></i></a>
+    <a href="wallet.html" class="nav-item"><i class="fas fa-wallet"></i></a>
+    <a href="profile.html" class="nav-item"><i class="fas fa-user"></i></a>
+  </nav>
+
+  <div class="toast" id="toast"></div>
+
+  <script type="module" src="js/home.js"></script>
+</body>
+</html>

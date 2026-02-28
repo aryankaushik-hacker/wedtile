@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedtile - Admin Panel</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Wedtile Admin</div>
+    <div class="nav-right">
+      <button class="follow-btn" onclick="location.href='index.html'"><i class="fas fa-home"></i> Home</button>
+    </div>
+  </nav>
+
+  <div class="admin-container">
+    <div class="admin-tabs">
+      <button class="admin-tab active" onclick="showTab('users')">Users</button>
+      <button class="admin-tab" onclick="showTab('withdrawals')">Withdrawals</button>
+      <button class="admin-tab" onclick="showTab('donations')">Donations</button>
+      <button class="admin-tab" onclick="showTab('stats')">Statistics</button>
+    </div>
+
+    <div id="usersTab" class="admin-tab-content active">
+      <h2>All Users</h2>
+      <div class="search-box">
+        <input type="text" id="userSearch" placeholder="Search users..." onkeyup="searchUsers()">
+      </div>
+      <div class="table-container">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Coins</th>
+              <th>Jaaps</th>
+              <th>Referrals</th>
+              <th>Joined</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="usersTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="withdrawalsTab" class="admin-tab-content">
+      <h2>Withdrawal Requests</h2>
+      <div class="table-container">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>User</th>
+              <th>Amount</th>
+              <th>Coins</th>
+              <th>Method</th>
+              <th>Details</th>
+              <th>Status</th>
+              <th>Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="withdrawalsTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="donationsTab" class="admin-tab-content">
+      <h2>Donation History</h2>
+      <div class="table-container">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>User</th>
+              <th>Cause</th>
+              <th>Amount (Coins)</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody id="donationsTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="statsTab" class="admin-tab-content">
+      <h2>Platform Statistics</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-users"></i></div>
+          <h3 id="totalUsers">0</h3>
+          <p>Total Users</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-coins"></i></div>
+          <h3 id="totalCoinsIssued">0</h3>
+          <p>Total Coins Issued</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-om"></i></div>
+          <h3 id="totalJaaps">0</h3>
+          <p>Total Jaaps</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-money-bill-wave"></i></div>
+          <h3 id="totalWithdrawals">₹0</h3>
+          <p>Total Withdrawals</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-hands-helping"></i></div>
+          <h3 id="totalDonations">0</h3>
+          <p>Total Donations</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-user-plus"></i></div>
+          <h3 id="totalReferrals">0</h3>
+          <p>Total Referrals</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/admin.js"></script>
+</body>
+</html>

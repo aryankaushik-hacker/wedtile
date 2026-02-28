@@ -1,14 +1,19 @@
 {
-  "name": "wedtile",
+  "name": "wedtile-app",
   "version": "1.0.0",
-  "type": "module",
+  "description": "Earn money by doing naam jaap",
+  "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "node server.js"
   },
   "dependencies": {
     "express": "^4.18.2",
-    "firebase": "^10.7.1",
-    "firebase-admin": "^12.0.0",
-    "cors": "^2.8.5"
+    "firebase-admin": "^11.11.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1"
+  },
+  "engines": {
+    "node": "18.x"
   }
 }

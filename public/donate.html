@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedtile - Donate</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Wedtile</div>
+    <div class="nav-right">
+      <div class="coin-balance"><i class="fas fa-coins"></i> <span id="coinBalance">0</span></div>
+    </div>
+  </nav>
+
+  <div class="donate-container">
+    <div class="donate-header">
+      <h1><i class="fas fa-hands-helping"></i> Donate & Earn Blessings</h1>
+      <p>Use your earned coins to help those in need</p>
+    </div>
+
+    <div class="donation-cards">
+      <div class="donation-card">
+        <div class="donation-icon">🐄</div>
+        <h3>Feed Cows</h3>
+        <p>Provide food and care for holy cows</p>
+        <div class="donation-progress">
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 65%"></div>
+          </div>
+          <span>₹65,000 raised of ₹100,000</span>
+        </div>
+        <div class="donation-amounts">
+          <button class="amount-btn" onclick="donate('cow', 100)">100 coins</button>
+          <button class="amount-btn" onclick="donate('cow', 500)">500 coins</button>
+          <button class="amount-btn" onclick="donate('cow', 1000)">1000 coins</button>
+        </div>
+        <button class="donate-btn" onclick="customDonate('cow')">Custom Amount</button>
+      </div>
+
+      <div class="donation-card">
+        <div class="donation-icon">🐕</div>
+        <h3>Feed Stray Dogs</h3>
+        <p>Help feed and care for street animals</p>
+        <div class="donation-progress">
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 45%"></div>
+          </div>
+          <span>₹45,000 raised of ₹100,000</span>
+        </div>
+        <div class="donation-amounts">
+          <button class="amount-btn" onclick="donate('dog', 100)">100 coins</button>
+          <button class="amount-btn" onclick="donate('dog', 500)">500 coins</button>
+          <button class="amount-btn" onclick="donate('dog', 1000)">1000 coins</button>
+        </div>
+        <button class="donate-btn" onclick="customDonate('dog')">Custom Amount</button>
+      </div>
+
+      <div class="donation-card">
+        <div class="donation-icon">🍲</div>
+        <h3>Feed Poor People</h3>
+        <p>Provide meals to those in need</p>
+        <div class="donation-progress">
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 80%"></div>
+          </div>
+          <span>₹80,000 raised of ₹100,000</span>
+        </div>
+        <div class="donation-amounts">
+          <button class="amount-btn" onclick="donate('poor', 100)">100 coins</button>
+          <button class="amount-btn" onclick="donate('poor', 500)">500 coins</button>
+          <button class="amount-btn" onclick="donate('poor', 1000)">1000 coins</button>
+        </div>
+        <button class="donate-btn" onclick="customDonate('poor')">Custom Amount</button>
+      </div>
+
+      <div class="donation-card">
+        <div class="donation-icon">🏥</div>
+        <h3>Medical Aid</h3>
+        <p>Support medical treatment for needy</p>
+        <div class="donation-progress">
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 30%"></div>
+          </div>
+          <span>₹30,000 raised of ₹100,000</span>
+        </div>
+        <div class="donation-amounts">
+          <button class="amount-btn" onclick="donate('medical', 100)">100 coins</button>
+          <button class="amount-btn" onclick="donate('medical', 500)">500 coins</button>
+          <button class="amount-btn" onclick="donate('medical', 1000)">1000 coins</button>
+        </div>
+        <button class="donate-btn" onclick="customDonate('medical')">Custom Amount</button>
+      </div>
+
+      <div class="donation-card">
+        <div class="donation-icon">📚</div>
+        <h3>Education Support</h3>
+        <p>Help children get quality education</p>
+        <div class="donation-progress">
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 55%"></div>
+          </div>
+          <span>₹55,000 raised of ₹100,000</span>
+        </div>
+        <div class="donation-amounts">
+          <button class="amount-btn" onclick="donate('education', 100)">100 coins</button>
+          <button class="amount-btn" onclick="donate('education', 500)">500 coins</button>
+          <button class="amount-btn" onclick="donate('education', 1000)">1000 coins</button>
+        </div>
+        <button class="donate-btn" onclick="customDonate('education')">Custom Amount</button>
+      </div>
+
+      <div class="donation-card">
+        <div class="donation-icon">🌳</div>
+        <h3>Plant Trees</h3>
+        <p>Contribute to environmental conservation</p>
+        <div class="donation-progress">
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 70%"></div>
+          </div>
+          <span>₹70,000 raised of ₹100,000</span>
+        </div>
+        <div class="donation-amounts">
+          <button class="amount-btn" onclick="donate('tree', 100)">100 coins</button>
+          <button class="amount-btn" onclick="donate('tree', 500)">500 coins</button>
+          <button class="amount-btn" onclick="donate('tree', 1000)">1000 coins</button>
+        </div>
+        <button class="donate-btn" onclick="customDonate('tree')">Custom Amount</button>
+      </div>
+    </div>
+
+    <div class="donation-stats">
+      <h3>Your Donation Impact</h3>
+      <div class="stats-grid">
+        <div class="stat-box">
+          <h4 id="totalDonated">0</h4>
+          <p>Total Donated (coins)</p>
+        </div>
+        <div class="stat-box">
+          <h4 id="donationCount">0</h4>
+          <p>Times Donated</p>
+        </div>
+        <div class="stat-box">
+          <h4 id="blessingsEarned">0</h4>
+          <p>Blessings Earned</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="bottom-nav">
+    <a href="index.html" class="nav-item"><i class="fas fa-home"></i></a>
+    <a href="donate.html" class="nav-item active"><i class="fas fa-om"></i></a>
+    <a href="wallet.html" class="nav-item"><i class="fas fa-wallet"></i></a>
+    <a href="profile.html" class="nav-item"><i class="fas fa-user"></i></a>
+  </nav>
+
+  <div class="toast" id="toast"></div>
+
+  <script type="module" src="js/donate.js"></script>
+</body>
+</html>

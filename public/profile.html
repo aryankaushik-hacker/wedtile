@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedtile - Profile</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Wedtile</div>
+    <div class="nav-right">
+      <button class="follow-btn" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+    </div>
+  </nav>
+
+  <div class="profile-container">
+    <div class="profile-banner">
+      <div class="banner-gradient"></div>
+    </div>
+
+    <div class="profile-main">
+      <div class="profile-avatar">
+        <div class="avatar-circle">
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="level-badge">Level <span id="userLevel">1</span></div>
+      </div>
+
+      <div class="profile-info">
+        <h2 id="userName">User</h2>
+        <p id="userEmail">email@example.com</p>
+        <div class="joined-date">
+          <i class="fas fa-calendar"></i> Joined <span id="joinedDate">Jan 2024</span>
+        </div>
+      </div>
+
+      <div class="profile-stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-om"></i></div>
+          <h3 id="totalJaaps">0</h3>
+          <p>Total Jaaps</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-coins"></i></div>
+          <h3 id="totalCoins">0</h3>
+          <p>Coins Earned</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-rupee-sign"></i></div>
+          <h3 id="totalEarnings">₹0</h3>
+          <p>Total Earnings</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-hands-helping"></i></div>
+          <h3 id="totalDonated">0</h3>
+          <p>Coins Donated</p>
+        </div>
+      </div>
+
+      <div class="achievements-section">
+        <h3><i class="fas fa-trophy"></i> Achievements</h3>
+        <div class="achievements-grid" id="achievementsGrid">
+          <div class="achievement-badge locked">
+            <i class="fas fa-lock"></i>
+            <p>First Jaap</p>
+          </div>
+          <div class="achievement-badge locked">
+            <i class="fas fa-lock"></i>
+            <p>108 Jaaps</p>
+          </div>
+          <div class="achievement-badge locked">
+            <i class="fas fa-lock"></i>
+            <p>1008 Jaaps</p>
+          </div>
+          <div class="achievement-badge locked">
+            <i class="fas fa-lock"></i>
+            <p>First Donation</p>
+          </div>
+          <div class="achievement-badge locked">
+            <i class="fas fa-lock"></i>
+            <p>100 Blessings</p>
+          </div>
+          <div class="achievement-badge locked">
+            <i class="fas fa-lock"></i>
+            <p>Generous Heart</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="referral-section">
+        <h3><i class="fas fa-users"></i> Invite Friends</h3>
+        <div class="referral-box">
+          <div class="referral-info">
+            <p>Share your referral code and earn <strong>100 coins</strong> for each friend who joins!</p>
+          </div>
+          <div class="referral-code-box">
+            <input type="text" id="refCode" value="WEDTILE123" readonly>
+            <button class="copy-btn" onclick="copyReferral()">
+              <i class="fas fa-copy"></i> Copy
+            </button>
+          </div>
+          <div class="referral-stats">
+            <span><i class="fas fa-user-plus"></i> <strong id="referralCount">0</strong> Friends Joined</span>
+            <span><i class="fas fa-coins"></i> <strong id="referralEarnings">0</strong> Coins Earned</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="activity-section">
+        <h3><i class="fas fa-history"></i> Recent Activity</h3>
+        <div class="activity-list" id="activityList">
+          <div class="activity-item">
+            <div class="activity-icon"><i class="fas fa-om"></i></div>
+            <div class="activity-content">
+              <p>Completed 108 jaaps</p>
+              <span>2 hours ago</span>
+            </div>
+            <div class="activity-reward">+1 coin</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="bottom-nav">
+    <a href="index.html" class="nav-item"><i class="fas fa-home"></i></a>
+    <a href="donate.html" class="nav-item"><i class="fas fa-om"></i></a>
+    <a href="wallet.html" class="nav-item"><i class="fas fa-wallet"></i></a>
+    <a href="profile.html" class="nav-item active"><i class="fas fa-user"></i></a>
+  </nav>
+
+  <script type="module" src="js/profile.js"></script>
+</body>
+</html>

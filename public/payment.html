@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedtile - Payment Required</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+  <div class="payment-container">
+    <div class="payment-card">
+      <div class="payment-icon">
+        <i class="fas fa-lock"></i>
+      </div>
+      <h1>Registration Fee Required</h1>
+      <p class="payment-subtitle">Complete your registration to unlock jaap benefits</p>
+      
+      <div class="payment-info">
+        <div class="info-item">
+          <i class="fas fa-check-circle"></i>
+          <span>Mandatory one-time registration fee</span>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-gift"></i>
+          <span>Refundable if you're lucky in our monthly draw</span>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-om"></i>
+          <span>Unlock unlimited jaap earning benefits</span>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-coins"></i>
+          <span>Start earning coins immediately after payment</span>
+        </div>
+      </div>
+
+      <div class="payment-amount">
+        <h2>₹51</h2>
+        <p>One-time Registration Fee</p>
+      </div>
+
+      <button class="payment-btn" onclick="initiatePayment()">
+        <i class="fas fa-credit-card"></i> Pay Now with Razorpay
+      </button>
+
+      <p class="payment-note">
+        <i class="fas fa-info-circle"></i> 
+        Without payment, you cannot earn coins from jaap
+      </p>
+    </div>
+  </div>
+
+  <script type="module" src="js/payment.js"></script>
+</body>
+</html>

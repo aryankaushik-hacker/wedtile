@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedtile - Wallet</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Wedtile</div>
+    <div class="nav-right">
+      <div class="coin-balance"><i class="fas fa-coins"></i> <span id="coinBalance">0</span></div>
+    </div>
+  </nav>
+
+  <div class="wallet-container">
+    <div class="balance-card">
+      <h3>Total Balance</h3>
+      <h1 id="totalCoins">0</h1>
+      <p>₹<span id="totalRupees">0</span></p>
+      <div class="conversion-info">
+        <p>1 coin = ₹0.001</p>
+        <p>1000 coins = ₹1</p>
+        <p>Minimum withdrawal: ₹50 (50,000 coins)</p>
+      </div>
+    </div>
+
+    <div class="earnings-grid">
+      <div class="earning-card">
+        <i class="fas fa-pray" style="font-size:24px;color:var(--neon-green)"></i>
+        <h3 id="watchEarnings">0</h3>
+        <p>Jaap Earnings</p>
+      </div>
+      <div class="earning-card">
+        <i class="fas fa-om" style="font-size:24px;color:var(--neon-blue)"></i>
+        <h3 id="uploadEarnings">0</h3>
+        <p>Mantra Earnings</p>
+      </div>
+      <div class="earning-card">
+        <i class="fas fa-users" style="font-size:24px;color:var(--neon-purple)"></i>
+        <h3 id="referralEarnings">0</h3>
+        <p>Referral Earnings</p>
+      </div>
+      <div class="earning-card">
+        <i class="fas fa-chart-line" style="font-size:24px;color:var(--neon-green)"></i>
+        <h3 id="totalViews">0</h3>
+        <p>Total Jaaps</p>
+      </div>
+    </div>
+
+    <div class="transaction-history">
+      <h3>Recent Transactions</h3>
+      <div id="transactionList"></div>
+    </div>
+
+    <button class="withdraw-btn" onclick="location.href='withdraw.html'"><i class="fas fa-money-bill-wave"></i> Withdraw Money</button>
+  </div>
+
+  <nav class="bottom-nav">
+    <a href="index.html" class="nav-item"><i class="fas fa-home"></i></a>
+    <a href="donate.html" class="nav-item"><i class="fas fa-om"></i></a>
+    <a href="wallet.html" class="nav-item active"><i class="fas fa-wallet"></i></a>
+    <a href="profile.html" class="nav-item"><i class="fas fa-user"></i></a>
+  </nav>
+
+  <script type="module" src="js/wallet.js"></script>
+</body>
+</html>
